@@ -1,7 +1,7 @@
 import random
 
 def play_hangman():
-    # 1. Word bank with clues
+    
     word_bank = {
         'python': 'A popular high-level programming language.',
         'algorithm': 'A set of steps to solve a specific problem.',
@@ -36,11 +36,11 @@ def play_hangman():
             print(f"Congratulations! You guessed the word: {target_word}")
             break
 
-        # 2. User Input with 'Hint' option
+        
         print("Type a letter or type 'hint' to reveal a letter (costs 2 attempts)")
         user_input = input("Your move: ").lower().strip()
 
-        # 3. Hint Logic
+        
         if user_input == 'hint':
             if (max_attempts - incorrect_guesses) <= 2:
                 print("Not enough attempts left to buy a hint!")
@@ -54,7 +54,7 @@ def play_hangman():
                     print(f"HINT: The letter '{bought_letter}' has been revealed. (-2 attempts)")
             continue
 
-        # 4. Standard Guess Validation
+        
         if len(user_input) != 1 or not user_input.isalpha():
             print("Please enter a single letter.")
             continue
@@ -65,7 +65,7 @@ def play_hangman():
 
         guessed_letters.append(user_input)
 
-        # 5. Check Guess
+        
         if user_input in target_word:
             print(f"Correct! '{user_input}' is in the word.")
         else:
